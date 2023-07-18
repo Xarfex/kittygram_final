@@ -13,8 +13,8 @@ jobs:
         image: postgres:13.10
         env:
           POSTGRES_USER: kittygram_user
-          POSTGRES_PASSWORD: kittygram_password
-          POSTGRES_DB: kittygram
+          POSTGRES_PASSWORD: django_password
+          POSTGRES_DB: kittygram_db
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
@@ -33,7 +33,7 @@ jobs:
     - name: Test with flake8 and django tests
       env:
         POSTGRES_USER: kittigram_user
-        POSTGRES_PASSWORD: kittygram_password
+        POSTGRES_PASSWORD: django_password
         POSTGRES_DB: kittygram_db
         DB_HOST: 127.0.0.1
         DB_PORT: 5432
