@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('TOKEN', 'NONTOKEN')
 
 DEBUG = os.getenv('LOCAL_DEBUG', False)
 
-ALLOWED_HOSTS = os.getenv('HOSTS'.split(), [''])
+ALLOWED_HOSTS = ['valerykittygram.hopto.org', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
