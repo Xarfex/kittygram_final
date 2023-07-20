@@ -161,7 +161,6 @@ jobs:
           sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
           sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
 
-  if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
